@@ -1,0 +1,47 @@
+{
+  "currency": "INR",
+  "currentCash": 180000,
+  "incomeSources": [
+    { "id": "salary", "name": "Monthly salary", "amount": 85000, "frequency": "monthly", "annualGrowthRate": 0.04 }
+  ],
+  "expenses": [
+    { "id": "rent", "name": "Rent and utilities", "amount": 18000, "frequency": "monthly", "essential": true, "annualInflationRate": 0.05 },
+    { "id": "food", "name": "Food and household", "amount": 14000, "frequency": "monthly", "essential": true, "annualInflationRate": 0.05 },
+    { "id": "transport", "name": "Transport", "amount": 5000, "frequency": "monthly", "essential": true, "annualInflationRate": 0.04 },
+    { "id": "lifestyle", "name": "Dining and entertainment", "amount": 9000, "frequency": "monthly", "essential": false, "annualInflationRate": 0.04 }
+  ],
+  "debts": [
+    { "id": "education-loan", "name": "Education loan", "balance": 320000, "annualInterestRate": 0.105, "minimumPayment": 9000, "extraPaymentAllowed": true }
+  ],
+  "goals": [
+    { "id": "emergency", "name": "Emergency fund", "targetAmount": 300000, "currentAmount": 60000, "targetDate": "2027-10-01", "priority": 5, "flexibility": "fixed", "minimumMonthlyContribution": 3000, "annualTargetInflationRate": 0.04 },
+    { "id": "education", "name": "Higher education", "targetAmount": 500000, "currentAmount": 80000, "targetDate": "2028-10-01", "priority": 4, "flexibility": "fixed", "minimumMonthlyContribution": 4000, "annualTargetInflationRate": 0.06 },
+    { "id": "home", "name": "House deposit", "targetAmount": 800000, "currentAmount": 50000, "targetDate": "2030-10-01", "priority": 3, "flexibility": "flexible", "adjustableTarget": true, "minimumTargetAmount": 650000, "minimumMonthlyContribution": 0, "annualTargetInflationRate": 0.05 }
+  ],
+  "recurringCommitments": [
+    { "id": "insurance", "name": "Insurance premium", "amount": 18000, "frequency": "yearly", "annualInflationRate": 0.05, "includedInExpenses": false }
+  ],
+  "knownFutureCommitments": [
+    { "id": "laptop", "name": "Laptop replacement", "amount": 55000, "date": "2027-04-01", "annualInflationRate": 0.03, "includedInExpenses": false }
+  ],
+  "expenseForecasts": [
+    { "id": "annual-medical", "name": "Known medical expense", "amount": 25000, "month": "2027-01-01", "essential": true }
+  ],
+  "assumptions": {
+    "startDate": "2026-10-01",
+    "projectionMonths": 60,
+    "annualGeneralInflationRate": 0.05,
+    "annualSavingsReturnRate": 0.03,
+    "minimumEmergencyReserve": 100000,
+    "reservePriority": "high",
+    "reserveTopUpMonths": 3,
+    "hardReserveConstraint": false,
+    "goalMinimumContributionsAreHard": false,
+    "maxDiscretionaryReductionRate": 0.2,
+    "maxTargetReductionRate": 0.1,
+    "maxFlexibleExtensionMonths": 12,
+    "targetAmountIsInTodayMoney": true,
+    "debtPaymentPriority": "high",
+    "includeCashInterest": true
+  }
+}
