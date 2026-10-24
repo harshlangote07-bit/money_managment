@@ -1,0 +1,14 @@
+
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:connection": "node test-connection.js"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.9",
+    "mongodb": "^7.7.0"
+  }
+}
