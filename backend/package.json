@@ -1,0 +1,14 @@
+{
+  "name": "money-management-path-engine",
+  "version": "2.0.0",
+  "description": "Deterministic multi-goal financial path generation, projection, feasibility checks and plan selection",
+  "main": "src/engines/pathEngine.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "demo": "node src/demo.js",
+    "server": "node src/server.js"
+  },
+  "engines": { "node": ">=18" },
+  "license": "UNLICENSED"
+}

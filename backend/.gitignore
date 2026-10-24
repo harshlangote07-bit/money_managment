@@ -1,0 +1,3 @@
+node_modules/
+data/active-plan.json
+*.log
