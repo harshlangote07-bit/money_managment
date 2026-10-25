@@ -1,0 +1,634 @@
+[
+{
+"demoId": "DEMO001",
+"transactions": [
+{
+"day": 1,
+"description": "Monthly salary",
+"amount": 87000,
+"type": "income",
+"category": "Income/salary",
+"frequency": "monthly"
+},
+{
+"day": 2,
+"description": "House rent",
+"amount": 14000,
+"type": "expense",
+"category": "housing/utilities",
+"frequency": "monthly"
+},
+{
+"day": 3,
+"description": "Grocery shopping",
+"amount": 6500,
+"type": "expense",
+"category": "groceries",
+"frequency": "monthly"
+},
+{
+"day": 5,
+"description": "Electricity and water",
+"amount": 2200,
+"type": "expense",
+"category": "housing/utilities",
+"frequency": "monthly"
+},
+{
+"day": 7,
+"description": "Car loan payment",
+"amount": 5000,
+"type": "expense",
+"category": "debt_repayment",
+"frequency": "monthly"
+},
+{
+"day": 10,
+"description": "Fuel",
+"amount": 2500,
+"type": "expense",
+"category": "transport/fuel",
+"frequency": "monthly"
+},
+{
+"day": 12,
+"description": "Restaurant dinner",
+"amount": 1800,
+"type": "expense",
+"category": "dining/food delivery",
+"frequency": "monthly"
+},
+{
+"day": 15,
+"description": "Mobile and internet",
+"amount": 1200,
+"type": "expense",
+"category": "housing/utilities",
+"frequency": "monthly"
+},
+{
+"day": 18,
+"description": "Healthcare",
+"amount": 1500,
+"type": "expense",
+"category": "healthcare",
+"frequency": "monthly"
+},
+{
+"day": 22,
+"description": "Entertainment subscription",
+"amount": 800,
+"type": "expense",
+"category": "entertainment",
+"frequency": "monthly"
+}
+]
+},
+{
+"demoId": "DEMO002",
+"transactions": [
+{
+"day": 1,
+"description": "Monthly salary",
+"amount": 120000,
+"type": "income",
+"category": "Income/salary",
+"frequency": "monthly"
+},
+{
+"day": 2,
+"description": "House rent",
+"amount": 18000,
+"type": "expense",
+"category": "housing/utilities",
+"frequency": "monthly"
+},
+{
+"day": 4,
+"description": "Family groceries",
+"amount": 8500,
+"type": "expense",
+"category": "groceries",
+"frequency": "monthly"
+},
+{
+"day": 6,
+"description": "School fees",
+"amount": 8000,
+"type": "expense",
+"category": "education",
+"frequency": "monthly"
+},
+{
+"day": 8,
+"description": "Home loan EMI",
+"amount": 10000,
+"type": "expense",
+"category": "debt_repayment",
+"frequency": "monthly"
+},
+{
+"day": 11,
+"description": "Fuel and transport",
+"amount": 3500,
+"type": "expense",
+"category": "transport/fuel",
+"frequency": "monthly"
+},
+{
+"day": 14,
+"description": "Family dining",
+"amount": 3000,
+"type": "expense",
+"category": "dining/food delivery",
+"frequency": "monthly"
+},
+{
+"day": 17,
+"description": "Utilities",
+"amount": 3000,
+"type": "expense",
+"category": "housing/utilities",
+"frequency": "monthly"
+},
+{
+"day": 20,
+"description": "Shopping",
+"amount": 4500,
+"type": "expense",
+"category": "shopping",
+"frequency": "monthly"
+},
+{
+"day": 25,
+"description": "Travel booking",
+"amount": 7000,
+"type": "expense",
+"category": "travel",
+"frequency": "monthly"
+}
+]
+},
+{
+"demoId": "DEMO003",
+"transactions": [
+{
+"day": 1,
+"description": "Monthly salary",
+"amount": 55000,
+"type": "income",
+"category": "Income/salary",
+"frequency": "monthly"
+},
+{
+"day": 2,
+"description": "House rent",
+"amount": 11000,
+"type": "expense",
+"category": "housing/utilities",
+"frequency": "monthly"
+},
+{
+"day": 4,
+"description": "Groceries",
+"amount": 6000,
+"type": "expense",
+"category": "groceries",
+"frequency": "monthly"
+},
+{
+"day": 6,
+"description": "Personal loan EMI",
+"amount": 12000,
+"type": "expense",
+"category": "debt_repayment",
+"frequency": "monthly"
+},
+{
+"day": 9,
+"description": "Transport and fuel",
+"amount": 2500,
+"type": "expense",
+"category": "transport/fuel",
+"frequency": "monthly"
+},
+{
+"day": 12,
+"description": "Electricity and water",
+"amount": 1800,
+"type": "expense",
+"category": "housing/utilities",
+"frequency": "monthly"
+},
+{
+"day": 16,
+"description": "Medicine",
+"amount": 2500,
+"type": "expense",
+"category": "healthcare",
+"frequency": "monthly"
+},
+{
+"day": 20,
+"description": "Food delivery",
+"amount": 1200,
+"type": "expense",
+"category": "dining/food delivery",
+"frequency": "monthly"
+},
+{
+"day": 25,
+"description": "Online purchase",
+"amount": 1800,
+"type": "expense",
+"category": "shopping",
+"frequency": "monthly"
+}
+]
+},
+{
+"demoId": "DEMO004",
+"transactions": [
+{
+"day": 1,
+"description": "Monthly salary",
+"amount": 75000,
+"type": "income",
+"category": "Income/salary",
+"frequency": "monthly"
+},
+{
+"day": 2,
+"description": "House rent",
+"amount": 12000,
+"type": "expense",
+"category": "housing/utilities",
+"frequency": "monthly"
+},
+{
+"day": 4,
+"description": "Groceries",
+"amount": 5500,
+"type": "expense",
+"category": "groceries",
+"frequency": "monthly"
+},
+{
+"day": 6,
+"description": "Transport",
+"amount": 2000,
+"type": "expense",
+"category": "transport/fuel",
+"frequency": "monthly"
+},
+{
+"day": 8,
+"description": "Loan payment",
+"amount": 3000,
+"type": "expense",
+"category": "debt_repayment",
+"frequency": "monthly"
+},
+{
+"day": 12,
+"description": "Healthcare",
+"amount": 1500,
+"type": "expense",
+"category": "healthcare",
+"frequency": "monthly"
+},
+{
+"day": 16,
+"description": "Utilities",
+"amount": 2500,
+"type": "expense",
+"category": "housing/utilities",
+"frequency": "monthly"
+},
+{
+"day": 20,
+"description": "Restaurant",
+"amount": 2000,
+"type": "expense",
+"category": "dining/food delivery",
+"frequency": "monthly"
+},
+{
+"day": 25,
+"description": "Clothing",
+"amount": 3500,
+"type": "expense",
+"category": "shopping",
+"frequency": "monthly"
+}
+]
+},
+{
+"demoId": "DEMO005",
+"transactions": [
+{
+"day": 1,
+"description": "Monthly salary",
+"amount": 45000,
+"type": "income",
+"category": "Income/salary",
+"frequency": "monthly"
+},
+{
+"day": 2,
+"description": "House rent",
+"amount": 10000,
+"type": "expense",
+"category": "housing/utilities",
+"frequency": "monthly"
+},
+{
+"day": 4,
+"description": "Groceries",
+"amount": 5500,
+"type": "expense",
+"category": "groceries",
+"frequency": "monthly"
+},
+{
+"day": 6,
+"description": "Loan repayment",
+"amount": 8000,
+"type": "expense",
+"category": "debt_repayment",
+"frequency": "monthly"
+},
+{
+"day": 9,
+"description": "Transport",
+"amount": 2200,
+"type": "expense",
+"category": "transport/fuel",
+"frequency": "monthly"
+},
+{
+"day": 12,
+"description": "Electricity",
+"amount": 1800,
+"type": "expense",
+"category": "housing/utilities",
+"frequency": "monthly"
+},
+{
+"day": 15,
+"description": "Medicine",
+"amount": 1500,
+"type": "expense",
+"category": "healthcare",
+"frequency": "monthly"
+},
+{
+"day": 20,
+"description": "Food delivery",
+"amount": 1200,
+"type": "expense",
+"category": "dining/food delivery",
+"frequency": "monthly"
+},
+{
+"day": 25,
+"description": "Unexpected repair",
+"amount": 4500,
+"type": "expense",
+"category": "general",
+"frequency": "monthly"
+}
+]
+},
+{
+"demoId": "DEMO006",
+"transactions": [
+{
+"day": 1,
+"description": "Monthly salary",
+"amount": 95000,
+"type": "income",
+"category": "Income/salary",
+"frequency": "monthly"
+},
+{
+"day": 2,
+"description": "House rent",
+"amount": 15000,
+"type": "expense",
+"category": "housing/utilities",
+"frequency": "monthly"
+},
+{
+"day": 4,
+"description": "Groceries",
+"amount": 6500,
+"type": "expense",
+"category": "groceries",
+"frequency": "monthly"
+},
+{
+"day": 6,
+"description": "Transport",
+"amount": 2500,
+"type": "expense",
+"category": "transport/fuel",
+"frequency": "monthly"
+},
+{
+"day": 8,
+"description": "Loan repayment",
+"amount": 5000,
+"type": "expense",
+"category": "debt_repayment",
+"frequency": "monthly"
+},
+{
+"day": 12,
+"description": "Healthcare",
+"amount": 1800,
+"type": "expense",
+"category": "healthcare",
+"frequency": "monthly"
+},
+{
+"day": 16,
+"description": "Utilities",
+"amount": 2500,
+"type": "expense",
+"category": "housing/utilities",
+"frequency": "monthly"
+},
+{
+"day": 20,
+"description": "Restaurant",
+"amount": 2500,
+"type": "expense",
+"category": "dining/food delivery",
+"frequency": "monthly"
+},
+{
+"day": 25,
+"description": "Shopping",
+"amount": 4000,
+"type": "expense",
+"category": "shopping",
+"frequency": "monthly"
+}
+]
+},
+{
+"demoId": "DEMO007",
+"transactions": [
+{
+"day": 1,
+"description": "Monthly salary",
+"amount": 60000,
+"type": "income",
+"category": "Income/salary",
+"frequency": "monthly"
+},
+{
+"day": 2,
+"description": "House rent",
+"amount": 14000,
+"type": "expense",
+"category": "housing/utilities",
+"frequency": "monthly"
+},
+{
+"day": 4,
+"description": "Groceries",
+"amount": 6500,
+"type": "expense",
+"category": "groceries",
+"frequency": "monthly"
+},
+{
+"day": 6,
+"description": "Loan repayment",
+"amount": 7000,
+"type": "expense",
+"category": "debt_repayment",
+"frequency": "monthly"
+},
+{
+"day": 9,
+"description": "Fuel",
+"amount": 3500,
+"type": "expense",
+"category": "transport/fuel",
+"frequency": "monthly"
+},
+{
+"day": 12,
+"description": "Utilities",
+"amount": 2500,
+"type": "expense",
+"category": "housing/utilities",
+"frequency": "monthly"
+},
+{
+"day": 16,
+"description": "Medical expenses",
+"amount": 1800,
+"type": "expense",
+"category": "healthcare",
+"frequency": "monthly"
+},
+{
+"day": 20,
+"description": "Dining",
+"amount": 2500,
+"type": "expense",
+"category": "dining/food delivery",
+"frequency": "monthly"
+},
+{
+"day": 25,
+"description": "Shopping",
+"amount": 3500,
+"type": "expense",
+"category": "shopping",
+"frequency": "monthly"
+}
+]
+},
+{
+"demoId": "DEMO008",
+"transactions": [
+{
+"day": 1,
+"description": "Monthly salary",
+"amount": 50000,
+"type": "income",
+"category": "Income/salary",
+"frequency": "monthly"
+},
+{
+"day": 2,
+"description": "House rent",
+"amount": 12000,
+"type": "expense",
+"category": "housing/utilities",
+"frequency": "monthly"
+},
+{
+"day": 4,
+"description": "Groceries",
+"amount": 6000,
+"type": "expense",
+"category": "groceries",
+"frequency": "monthly"
+},
+{
+"day": 6,
+"description": "Loan repayment",
+"amount": 9000,
+"type": "expense",
+"category": "debt_repayment",
+"frequency": "monthly"
+},
+{
+"day": 9,
+"description": "Transport",
+"amount": 2500,
+"type": "expense",
+"category": "transport/fuel",
+"frequency": "monthly"
+},
+{
+"day": 12,
+"description": "Utilities",
+"amount": 2000,
+"type": "expense",
+"category": "housing/utilities",
+"frequency": "monthly"
+},
+{
+"day": 16,
+"description": "Medicine",
+"amount": 3000,
+"type": "expense",
+"category": "healthcare",
+"frequency": "monthly"
+},
+{
+"day": 20,
+"description": "Food delivery",
+"amount": 1800,
+"type": "expense",
+"category": "dining/food delivery",
+"frequency": "monthly"
+},
+{
+"day": 25,
+"description": "Emergency repair",
+"amount": 5000,
+"type": "expense",
+"category": "general",
+"frequency": "monthly"
+}
+]
+}
+]
