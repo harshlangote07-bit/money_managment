@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pydantic
+scikit-learn
+pandas
+numpy
+joblib
+ortools
+scipy
+datasets
+sqlalchemy
+python-multipart
