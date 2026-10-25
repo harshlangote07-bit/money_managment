@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Sidebar from './components/Sidebar.jsx';
 import Topbar from './components/Topbar.jsx';
+import AuthPage from './components/AuthPage.jsx';
 import './App.css';
 
 const seedGoals = [
@@ -26,14 +27,11 @@ const pages = [
 function App() {
   const navigate = useNavigate();
   const location = useLocation();
-  const routeToPage = {'/':'welcome','/login':'login','/dashboard':'dashboard','/planner':'planner','/simulator':'simulator','/recovery':'recovery','/recommendations':'recommendations','/profile':'profile'};
+  const routeToPage = {'/':'welcome','/login':'login','/verify-email':'login','/reset-password':'login','/dashboard':'dashboard','/planner':'planner','/simulator':'simulator','/recovery':'recovery','/recommendations':'recommendations','/profile':'profile'};
   const pageToRoute = {welcome:'/',login:'/login',dashboard:'/dashboard',planner:'/planner',simulator:'/simulator',recovery:'/recovery',recommendations:'/recommendations',profile:'/profile'};
   const page = routeToPage[location.pathname] || 'not-found';
-  const [isLoggedIn, setIsLoggedIn] = useState(
-    () => localStorage.getItem('foresight-demo-session') === 'active'
-  );
-  const [loginEmail, setLoginEmail] = useState('');
-  const [loginError, setLoginError] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [authReady, setAuthReady] = useState(false);
 
   const [profile, setProfile] = useState({ name: 'Gaurav Gowda', email: 'gaurav@example.com', occupation: 'Student', monthlyIncome: 80000 });
   const [goals, setGoals] = useState(() => {
@@ -104,10 +102,88 @@ function App() {
   const profileInitials = profile.name.trim().split(/\s+/).map((part) => part[0]).join('').slice(0, 2).toUpperCase() || 'U';
   const protectedRouteIds = ['dashboard', 'profile', 'planner', 'simulator', 'recovery', 'recommendations'];
   useEffect(() => {
-    if (protectedRouteIds.includes(page) && !isLoggedIn && location.pathname !== '/login') {
-      navigate('/login', { replace: true });
+    let cancelled = false;
+
+    async function restoreSession() {
+      try {
+        const response = await fetch('/api/v1/auth/me', {
+          credentials: 'same-origin',
+        });
+
+        if (response.ok) {
+          const result = await response.json();
+          const user = result?.data?.user;
+
+          if (!cancelled && result.success && user) {
+            setIsLoggedIn(true);
+            setProfile((current) => ({
+              ...current,
+              name: user.name,
+              email: user.email,
+            }));
+          }
+        }
+      } catch (error) {
+        console.error('Could not restore authentication session:', error);
+      } finally {
+        if (!cancelled) setAuthReady(true);
+      }
     }
-  }, [page, isLoggedIn, location.pathname, navigate]);
+
+    restoreSession();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    async function handleCrossTabAuthentication(event) {
+      if (event.key !== 'foresight-auth-changed' || !event.newValue) return;
+
+      try {
+        const response = await fetch('/api/v1/auth/me', {
+          credentials: 'same-origin',
+        });
+
+        if (!response.ok) return;
+
+        const result = await response.json();
+        const user = result?.data?.user;
+
+        if (!result.success || !user) return;
+
+        setProfile((current) => ({
+          ...current,
+          name: user.name,
+          email: user.email,
+        }));
+        setIsLoggedIn(true);
+        navigate('/dashboard', { replace: true });
+      } catch (error) {
+        console.error('Could not sync authentication across tabs:', error);
+      }
+    }
+
+    window.addEventListener('storage', handleCrossTabAuthentication);
+    return () => {
+      window.removeEventListener('storage', handleCrossTabAuthentication);
+    };
+  }, [navigate]);
+
+  useEffect(() => {
+    if (!authReady) return;
+
+    if (
+      protectedRouteIds.includes(page) &&
+      !isLoggedIn &&
+      location.pathname !== '/login'
+    ) {
+      navigate('/login', { replace: true });
+    } else if (page === 'login' && isLoggedIn) {
+      navigate('/dashboard', { replace: true });
+    }
+  }, [authReady, page, isLoggedIn, location.pathname, navigate]);
 
   function changeGoal(id, key, value) {
     setGoals((current) => current.map((g) => g.id === id ? { ...g, [key]: value } : g));
@@ -163,26 +239,33 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  function handleDemoLogin(e) {
-    e.preventDefault();
-    if (!loginEmail.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(loginEmail.trim())) {
-      setLoginError('Please enter a valid email address.');
-      return;
-    }
-    localStorage.setItem('foresight-demo-session', 'active');
+  function handleAuthenticated(user) {
     setIsLoggedIn(true);
-    setLoginError('');
-    navigate('/dashboard');
+    setProfile((current) => ({
+      ...current,
+      name: user.name,
+      email: user.email,
+    }));
+    navigate('/dashboard', { replace: true });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  function handleLogout() {
-    localStorage.removeItem('foresight-demo-session');
-    setIsLoggedIn(false);
-    setLoginEmail('');
-    navigate('/', { replace: true });
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  async function handleLogout() {
+    try {
+      await fetch('/api/v1/auth/logout', {
+        method: 'POST',
+        credentials: 'same-origin',
+      });
+    } catch (error) {
+      console.error('Logout request failed:', error);
+    } finally {
+      setIsLoggedIn(false);
+      localStorage.removeItem('foresight-demo-session');
+      navigate('/', { replace: true });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
+
   return (
     <div className={`app-shell ${page === 'welcome' ? 'welcome-shell' : ''}`}>
       {page !== 'welcome' && page !== 'login' && (
@@ -197,26 +280,10 @@ function App() {
         {page === 'not-found' && <div className="page-content"><h1>Page not found</h1><button className="button button-primary" onClick={() => nav('dashboard')}>Go to dashboard</button></div>}
 
         {page === 'login' && (
-          <section className="login-page" style={{ minHeight: '100vh', display: 'grid', placeItems: 'center', padding: '32px 20px', background: 'linear-gradient(135deg, #f5f7f2 0%, #eef3eb 100%)' }}>
-            <div className="login-card" style={{ width: '100%', maxWidth: '460px', padding: 'clamp(28px, 5vw, 48px)', background: '#fff', border: '1px solid #e3e9df', borderRadius: '24px', boxShadow: '0 24px 70px rgba(39, 66, 48, 0.10)' }}>
-              <button className="brand" onClick={() => nav('welcome')} aria-label="Foresight home" style={{ marginBottom: '36px' }}>
-                <img src="/foresight-logo.png" alt="Foresight Logo" className="brand-logo" style={{ height: '30px', width: 'auto' }} />
-                <span>foresight<span className="brand-dot">.</span></span>
-              </button>
-              <div className="eyebrow"><span className="eyebrow-dot" /> PERSONAL FINANCIAL PLANNING</div>
-              <h1 style={{ fontSize: 'clamp(2rem, 6vw, 2.8rem)', lineHeight: 1.1, margin: '18px 0 14px', color: '#263b2d' }}>Welcome to <em>Foresight.</em></h1>
-              <p style={{ color: '#68756a', lineHeight: 1.7, marginBottom: '28px' }}>Explore your financial goals, test scenarios, and prepare for life's unexpected changes.</p>
-              <form onSubmit={handleDemoLogin}>
-                <label className="form-field">Email address
-                  <input type="email" value={loginEmail} onChange={(e) => { setLoginEmail(e.target.value); setLoginError(''); }} placeholder="you@example.com" autoComplete="email" required />
-                </label>
-                {loginError && <p role="alert" style={{ color: '#b42318', fontSize: '0.9rem', margin: '8px 0 14px' }}>{loginError}</p>}
-                <button className="button button-primary full-button" type="submit" style={{ marginTop: '12px' }}>Enter demo workspace <span>→</span></button>
-              </form>
-              <p style={{ color: '#7a857b', fontSize: '0.82rem', lineHeight: 1.6, margin: '20px 0' }}>Demo access only. No password or real account is required. This is not secure authentication.</p>
-              <button className="text-button" onClick={() => nav('welcome')}>← Back to home</button>
-            </div>
-          </section>
+          <AuthPage
+            onAuthenticated={handleAuthenticated}
+            onBack={() => nav('welcome')}
+          />
         )}
 
         {page === 'welcome' && (

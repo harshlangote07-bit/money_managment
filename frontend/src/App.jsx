@@ -4,6 +4,8 @@ export default function App() {
   return <BrowserRouter><Routes>
     <Route path="/" element={<Workspace />} />
     <Route path="/login" element={<Workspace />} />
+    <Route path="/verify-email" element={<Workspace />} />
+    <Route path="/reset-password" element={<Workspace />} />
     <Route path="/dashboard" element={<Workspace />} />
     <Route path="/planner" element={<Workspace />} />
     <Route path="/simulator" element={<Workspace />} />
