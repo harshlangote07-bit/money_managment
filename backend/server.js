@@ -1,8 +1,10 @@
 import "dotenv/config";
 import express from "express";
+import cookieParser from "cookie-parser";
 
 import { connectDB, closeDB } from "./db/connection.js";
 import plannerRoutes from "./planner/planner.routes.js";
+import authRoutes from "./auth/auth.routes.js";
 
 const app = express();
 
@@ -10,6 +12,7 @@ const PORT = Number(process.env.PORT) || 3000;
 
 // Parse JSON request bodies.
 app.use(express.json({ limit: "1mb" }));
+app.use(cookieParser());
 
 // Basic health check.
 app.get("/health", (req, res) => {
@@ -20,6 +23,7 @@ app.get("/health", (req, res) => {
 });
 
 // Register F2 planner endpoints.
+app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/planner", plannerRoutes);
 
 // Handle invalid JSON bodies and other errors.
