@@ -1,0 +1,242 @@
+[
+{
+"demoId": "DEMO001",
+"name": "Emergency Fund",
+"category": "emergency_fund",
+"targetAmount": 300000,
+"currentAmount": 75000,
+"monthlyContribution": 10000,
+"targetDate": "2027-10-25",
+"priority": "high"
+},
+{
+"demoId": "DEMO001",
+"name": "Home Down Payment",
+"category": "home",
+"targetAmount": 1500000,
+"currentAmount": 200000,
+"monthlyContribution": 15000,
+"targetDate": "2030-01-01",
+"priority": "medium"
+},
+{
+"demoId": "DEMO001",
+"name": "Retirement Savings",
+"category": "retirement",
+"targetAmount": 10000000,
+"currentAmount": 500000,
+"monthlyContribution": 8000,
+"targetDate": "2045-01-01",
+"priority": "medium"
+},
+{
+"demoId": "DEMO002",
+"name": "Child Education Fund",
+"category": "education",
+"targetAmount": 2500000,
+"currentAmount": 600000,
+"monthlyContribution": 20000,
+"targetDate": "2032-06-01",
+"priority": "high"
+},
+{
+"demoId": "DEMO002",
+"name": "Dream Home",
+"category": "home",
+"targetAmount": 3000000,
+"currentAmount": 900000,
+"monthlyContribution": 25000,
+"targetDate": "2030-01-01",
+"priority": "high"
+},
+{
+"demoId": "DEMO002",
+"name": "International Vacation",
+"category": "travel",
+"targetAmount": 300000,
+"currentAmount": 100000,
+"monthlyContribution": 10000,
+"targetDate": "2027-12-01",
+"priority": "low"
+},
+{
+"demoId": "DEMO003",
+"name": "Emergency Fund",
+"category": "emergency_fund",
+"targetAmount": 200000,
+"currentAmount": 20000,
+"monthlyContribution": 3000,
+"targetDate": "2029-01-01",
+"priority": "high"
+},
+{
+"demoId": "DEMO003",
+"name": "Debt Repayment",
+"category": "debt_repayment",
+"targetAmount": 420000,
+"currentAmount": 100000,
+"monthlyContribution": 8000,
+"targetDate": "2029-12-01",
+"priority": "high"
+},
+{
+"demoId": "DEMO003",
+"name": "Skill Development",
+"category": "education",
+"targetAmount": 100000,
+"currentAmount": 15000,
+"monthlyContribution": 2000,
+"targetDate": "2027-06-01",
+"priority": "medium"
+},
+{
+"demoId": "DEMO004",
+"name": "Emergency Fund",
+"category": "emergency_fund",
+"targetAmount": 250000,
+"currentAmount": 200000,
+"monthlyContribution": 5000,
+"targetDate": "2027-10-25",
+"priority": "high"
+},
+{
+"demoId": "DEMO004",
+"name": "New Car",
+"category": "vehicle",
+"targetAmount": 1000000,
+"currentAmount": 250000,
+"monthlyContribution": 12000,
+"targetDate": "2029-01-01",
+"priority": "medium"
+},
+{
+"demoId": "DEMO004",
+"name": "Retirement Savings",
+"category": "retirement",
+"targetAmount": 12000000,
+"currentAmount": 1200000,
+"monthlyContribution": 15000,
+"targetDate": "2045-01-01",
+"priority": "medium"
+},
+{
+"demoId": "DEMO005",
+"name": "Emergency Fund",
+"category": "emergency_fund",
+"targetAmount": 150000,
+"currentAmount": 10000,
+"monthlyContribution": 1000,
+"targetDate": "2030-01-01",
+"priority": "high"
+},
+{
+"demoId": "DEMO005",
+"name": "Outstanding Debt Reduction",
+"category": "debt_repayment",
+"targetAmount": 180000,
+"currentAmount": 30000,
+"monthlyContribution": 3000,
+"targetDate": "2030-01-01",
+"priority": "high"
+},
+{
+"demoId": "DEMO005",
+"name": "Professional Certification",
+"category": "education",
+"targetAmount": 50000,
+"currentAmount": 5000,
+"monthlyContribution": 1000,
+"targetDate": "2028-01-01",
+"priority": "medium"
+},
+{
+"demoId": "DEMO006",
+"name": "Emergency Fund",
+"category": "emergency_fund",
+"targetAmount": 400000,
+"currentAmount": 400000,
+"monthlyContribution": 0,
+"targetDate": "2026-10-25",
+"priority": "high"
+},
+{
+"demoId": "DEMO006",
+"name": "Retirement Savings",
+"category": "retirement",
+"targetAmount": 15000000,
+"currentAmount": 2500000,
+"monthlyContribution": 20000,
+"targetDate": "2045-01-01",
+"priority": "high"
+},
+{
+"demoId": "DEMO006",
+"name": "Investment Portfolio",
+"category": "investment",
+"targetAmount": 2000000,
+"currentAmount": 700000,
+"monthlyContribution": 15000,
+"targetDate": "2032-01-01",
+"priority": "medium"
+},
+{
+"demoId": "DEMO007",
+"name": "Emergency Fund",
+"category": "emergency_fund",
+"targetAmount": 200000,
+"currentAmount": 30000,
+"monthlyContribution": 3000,
+"targetDate": "2030-01-01",
+"priority": "high"
+},
+{
+"demoId": "DEMO007",
+"name": "Home Down Payment",
+"category": "home",
+"targetAmount": 1000000,
+"currentAmount": 100000,
+"monthlyContribution": 5000,
+"targetDate": "2032-01-01",
+"priority": "medium"
+},
+{
+"demoId": "DEMO007",
+"name": "Debt Reduction",
+"category": "debt_repayment",
+"targetAmount": 260000,
+"currentAmount": 40000,
+"monthlyContribution": 4000,
+"targetDate": "2030-01-01",
+"priority": "high"
+},
+{
+"demoId": "DEMO008",
+"name": "Emergency Fund",
+"category": "emergency_fund",
+"targetAmount": 150000,
+"currentAmount": 5000,
+"monthlyContribution": 500,
+"targetDate": "2032-01-01",
+"priority": "high"
+},
+{
+"demoId": "DEMO008",
+"name": "Debt Reduction",
+"category": "debt_repayment",
+"targetAmount": 300000,
+"currentAmount": 25000,
+"monthlyContribution": 2000,
+"targetDate": "2032-01-01",
+"priority": "high"
+},
+{
+"demoId": "DEMO008",
+"name": "Career Development",
+"category": "education",
+"targetAmount": 60000,
+"currentAmount": 5000,
+"monthlyContribution": 1000,
+"targetDate": "2028-01-01",
+"priority": "medium"
+}
+]
