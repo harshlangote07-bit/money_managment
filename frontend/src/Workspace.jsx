@@ -28,7 +28,7 @@ const pages = [
   { id: 'planner', label: 'Planner & Optimizer', icon: '⌁' },
   { id: 'simulator', label: 'Simulator & Resilience', icon: '↗' },
   { id: 'recovery', label: 'Emergency Recovery', icon: '✳' },
-  { id: 'recommendations', label: 'Recommendations & History', icon: '◉' },
+  { id: 'recommendations', label: 'Recommendations', icon: '◉' },
 ];
 
 function App() {
@@ -94,6 +94,13 @@ function App() {
   });
   const [plannerSaveMessage, setPlannerSaveMessage] = useState('');
   const [plannerSaveError, setPlannerSaveError] = useState('');
+  const [planHistory, setPlanHistory] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem('foresight-plan-history') || '[]');
+    } catch {
+      return [];
+    }
+  });
 
   const surplus = Number(income) - Number(expenses) - Number(debt);
   const goalTotal = goals.reduce((sum, g) => sum + Number(g.target), 0);
@@ -233,6 +240,19 @@ function App() {
     };
     try {
       localStorage.setItem('foresight-planner-data', JSON.stringify(payload));
+      const historyEntry = {
+        id: `${Date.now()}`,
+        savedAt: payload.saved_at,
+        income: payload.income,
+        expenses: payload.expenses,
+        debt: payload.debt,
+        reserve: payload.reserve,
+        surplus: payload.income - payload.expenses - payload.debt,
+        goalCount: payload.goals.length,
+      };
+      const nextHistory = [historyEntry, ...planHistory].slice(0, 20);
+      localStorage.setItem('foresight-plan-history', JSON.stringify(nextHistory));
+      setPlanHistory(nextHistory);
       setPlannerSaveMessage('Your financial baseline and goals have been saved in this browser.');
     } catch {
       setPlannerSaveError('Could not save your data in this browser. Check available browser storage and try again.');
@@ -303,6 +323,7 @@ function App() {
     setPlannerSaveMessage,
     plannerSaveError,
     setPlannerSaveError,
+    planHistory,
     surplus,
     goalTotal,
     goalSaved,
